@@ -78,10 +78,12 @@ public class MenuScore implements GeneralMenu{
 		if(key==GameSystem.CONFIRM){
 			if(selected==SELECTED.CONTINUE){
 				MenuChar.handler.refreshAll();
+				GameSystem.playConfirm();
 				Menu.toCharStats();
 			}
 			else if(selected==SELECTED.CHANGE_CHARACTER){
 				GameSystem.PLAYER_ONE_CHOSEN=false;
+				GameSystem.playConfirm();
 				Menu.toChooseChar();
 			}
 			
