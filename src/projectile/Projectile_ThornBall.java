@@ -20,7 +20,9 @@ public class Projectile_ThornBall extends Projectile{
 	protected int duration = 150;
 	/**
 	 * defines thornball projectile
-	 * @param coordinates, game, game object
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Projectile_ThornBall(int x, int y, Game game, GameObject o) {
 		super(x, y, game, o);

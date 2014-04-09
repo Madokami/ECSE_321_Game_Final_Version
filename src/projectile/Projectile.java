@@ -35,6 +35,13 @@ public abstract class Projectile extends MovableObject {
 	
 	public int damage;
 	public GameObject owner;
+	
+	/**
+	 * Creates an instance of a Projectile
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
+	 */
 	public Projectile(int x, int y, Game game,GameObject o) {
 		super(x, y, game);
 		owner=o;

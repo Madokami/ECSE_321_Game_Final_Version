@@ -6,7 +6,7 @@ import game.Game;
 /**
 * <b>Description:</b>
 * <br>
-* New type of enemy is defined with corresponding attributes such as speed and abilites
+* New type of enemy is defined with corresponding attributes such as speed and abilities
 * <br>Enemy spawns at specific coordinates on grid map
 * <br>Enemy is unique and displayed with images corresponding to its animation
 * @author Team 6
@@ -16,8 +16,9 @@ import game.Game;
 public class Enemy_5_2 extends Enemy_4{
 	/**
 	 * defines new enemy
-	 * @panam coordinates, game object
-	 * @return enemy
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Enemy_5_2(int x, int y, Game game) {
 		super(x, y, game);

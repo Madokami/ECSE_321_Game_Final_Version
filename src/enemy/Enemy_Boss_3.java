@@ -19,8 +19,9 @@ public class Enemy_Boss_3 extends Enemy{
 	protected ImageSequence summon;
 	/**
 	 * defines new enemy boss
-	 * @panam coordinates, game object
-	 * @return enemy
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Enemy_Boss_3(int x, int y, Game game) {
 		super(x, y, game);
@@ -40,9 +41,6 @@ public class Enemy_Boss_3 extends Enemy{
 	}
 
 	@Override
-	/**
-	 * defines boss attributes
-	 */
 	public void useUltimate() {
 		//laser attack
 		String dir = ai.isValidStraightLine(controller.wallArray, Game.getPlayer().getxGridNearest(), Game.getPlayer().getyGridNearest(), getxGridNearest(), getyGridNearest());

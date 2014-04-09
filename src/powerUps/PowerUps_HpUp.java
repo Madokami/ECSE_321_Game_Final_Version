@@ -15,7 +15,9 @@ import game.Game;
 public class PowerUps_HpUp extends PowerUps{
 	/**
 	 * defines power ups
-	 * @param coordinates, game object
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public PowerUps_HpUp(int x, int y, Game game) {
 		super(x, y, game);
@@ -23,13 +25,9 @@ public class PowerUps_HpUp extends PowerUps{
 		setImage(getSs().grabImage(10,14,getSsWidth(),getSsHeight()));
 	}
 
-	@Override
-	/**
-	 * increases hp by 20
-	 * @param player object
-	 */
+
 	public void applyEffect(Player player) {
-		player.hp+=20;
+		player.hp+=player.maxHp/3;
 	}
 
 }

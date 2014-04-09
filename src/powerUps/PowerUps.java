@@ -16,19 +16,21 @@ public abstract class PowerUps extends GameObject{
 	public String type;
 	/**
 	 * defines power up
-	 * @param coordinates, game object
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public PowerUps(int x, int y, Game game) {
 		super(x, y, game);
 		// TODO Auto-generated constructor stub
 	}
-	/**
-	 * applies quick return
-	 */
+	
 	public void tick(){
 		return;
 	}
-	
+	/**
+	 * applies certain effects to the inputed player object
+	 */
 	public abstract void applyEffect(Player player);
 	
 	//removes entity

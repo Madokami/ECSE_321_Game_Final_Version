@@ -26,8 +26,9 @@ public class Enemy_Boss_5 extends Enemy{
 	private ImageSequence open;
 	/**
 	 * defines new enemy boss
-	 * @panam coordinates, game object
-	 * @return enemy
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Enemy_Boss_5(int x, int y, Game game) {
 		super(x, y, game);
@@ -54,9 +55,7 @@ public class Enemy_Boss_5 extends Enemy{
 		ultyCd=120;
 		
 	}
-	/**
-	 * deterimes next iteration based on current status
-	 */
+	
 	public void tick(){
 		ultyTimer++;
 		if(ultyTimer>ultyCd){
@@ -127,10 +126,7 @@ public class Enemy_Boss_5 extends Enemy{
 	
 	}
 	
-	@Override
-	/**
-	 * defines boss attributes
-	 */
+	
 	public void useUltimate() {
 		LinkedList<Point> points = ai.obtainRandomValidPoints(game.getWallArray(), 10);
 		if(points.size()>0){

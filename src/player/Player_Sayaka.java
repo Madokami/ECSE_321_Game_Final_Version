@@ -15,7 +15,7 @@ import graphicEffects.IntToImage;
 * Defines new individual player
 * <br>Utilizes unique image to display player
 * <br>Corresponds to input coordinates of grid map
-* <br>Contains features such as sound and abilites
+* <br>Contains features such as sound and abilities
 * @author Team 6
 * @version 1.0
 * @since 2014-03-31
@@ -24,7 +24,9 @@ public class Player_Sayaka extends Player{
 	
 	/**
 	 * defines new character
-	 * @param coordinates, game object
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Player_Sayaka(int x, int y, Game game) {
 		super(x, y, game);

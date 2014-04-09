@@ -49,7 +49,7 @@ public class StageRenderer {
 	
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render1(Graphics g){
 		g.drawImage(corn, 14*size, 0*size,size,size, null);
@@ -65,7 +65,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render2(Graphics g){
 		g.drawImage(corn, 2*size, 3*size,size,size, null);
@@ -83,7 +83,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render3(Graphics g){
 		g.drawImage(corn, 0*size, 0*size,size,size, null);
@@ -101,7 +101,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render4(Graphics g){
 		g.drawImage(candy, 0*size, 0*size,size,2*size, null);
@@ -117,7 +117,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render5(Graphics g){
 		g.drawImage(candy, 0*size, 0*size,size,2*size, null);
@@ -129,7 +129,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render6(Graphics g){
 		g.drawImage(no3, 3*size, 2*size,size,size, null);
@@ -140,7 +140,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render7(Graphics g){
 		g.drawImage(tv2, 0*size, 1*size,size,size, null);
@@ -154,7 +154,7 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render8(Graphics g){
 		g.drawImage(tv1, 3*size, 2*size,size,size, null);
@@ -176,14 +176,14 @@ public class StageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
     public void render9(Graphics g){
     	
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
     public void render10(Graphics g){
     	g.drawImage(bill2, 0*size, 1*size,2*size,4*size, null);
@@ -193,7 +193,7 @@ public class StageRenderer {
     }
 	/**
 	 * renders graphics
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
     public void render11(Graphics g){
     	g.drawImage(tank, 2*size, 9*size,4*size,size, null);

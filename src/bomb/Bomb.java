@@ -41,8 +41,6 @@ public class Bomb extends MovableObject{
 	 * <br><b>bombStrength</b> - the amount of health the character loses from the bomb
 	 * <br><b>bombLength</b> - the size of the bomb
 	 * <br><b>duration</b> - the time that the bomb is present before detonation
-	 * @panam coordinates, game object; bomb strength, length, duration
-	 * @return bomb
 	 */
 	public Bomb(int x,int y, Game game,int bombStrength,int bombLength,int duration){
 		super(x,y,game);

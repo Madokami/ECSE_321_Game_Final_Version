@@ -18,8 +18,9 @@ import system.GameSystem;
 public class Projectile_TiroFinale extends Projectile{
 	/**
 	 * Define individual projectile
-	 * @param coordinates, game, game object o
-	 * @return projectile
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Projectile_TiroFinale(int x, int y, Game game, GameObject o) {
 		super(x, y, game, o);

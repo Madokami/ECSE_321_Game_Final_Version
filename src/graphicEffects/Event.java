@@ -28,8 +28,7 @@ public class Event {
 	}
 	/**
 	 * defines start
-	 * @panam duration
-	 * @return start
+	 * @param duration the duration of the event
 	 */
 	public void start(int duration){
 		this.duration=duration;
@@ -38,8 +37,7 @@ public class Event {
 	}
 	/**
 	 * defines start
-	 * @panam duration, value
-	 * @return start
+	 * @param duration, value
 	 */
 	public void start(int duration,int value){
 		this.duration=duration;

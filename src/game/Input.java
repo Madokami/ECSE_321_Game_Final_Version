@@ -18,19 +18,19 @@ public class Input extends KeyAdapter{
 	
 	/**
 	 * defines input
-	 * @panam game system object
+	 * @param sys instance of GameSystem
 	 */
 	public Input(GameSystem sys){
 		this.sys = sys;
 	}
 	/**
-	 * keypress exception
+	 * manages user key pressed
 	 */
 	public void keyPressed(KeyEvent e){
 		sys.keyPressed(e);
 	}
 	/**
-	 * keyrelease exception
+	 * manages user key released
 	 */
 	public void keyReleased(KeyEvent e){
 		sys.keyReleased(e);

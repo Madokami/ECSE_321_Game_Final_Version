@@ -42,7 +42,6 @@ public abstract class Enemy extends MovableObject{
 	 * @param x coordinate X in grids
 	 * @param y coordinate Y in grids
 	 * @param game instance of Game
-	 * @return enemy
 	 */
 	public Enemy(int x,int y, Game game){
 		super(x,y,game);
@@ -70,11 +69,6 @@ public abstract class Enemy extends MovableObject{
 	 */
 	public void tick(){
 		super.tick();
-		/*
-		if(Physics.overlapWithOtherEnemies(this, game.getEnemyList())){
-			this.moveToLastAcceptableLocation();
-		}
-		*/
 		if(GameSystem.LAN_TWO_PLAYER_MODE){
 			if(GameSystem.isPlayerOne){
 				if(positionUpdateTimer>15){
@@ -139,35 +133,14 @@ public abstract class Enemy extends MovableObject{
 			useAbility2();
 			abi2Timer=0;
 		}
-		/*
-		if(counter>40){
-			counter=0;
-			moveRandomly();
-		}
-		*/
 		
 		if(hp<=0){
 			remove();
 		}
-		/*
-		if(super.x<=0)
-			moveRight();
-		if(super.x>=Game.WIDTH*Game.SCALE-23)
-			moveLeft();
-		if(super.y<=0)
-			super.moveDown();
-		if(super.y>=Game.HEIGHT*Game.SCALE-23)
-			super.moveUp();
-		if(Physics.collision(game.p, this)){
-			//game.c.removeEntity(this);
-		}
-		*/
-	
 	}
 	/**
 	 * changes experience of player
-	 * @param player object
-	 * @return points of player
+	 * @param p target player
 	 */
 	public void providePoints(Player p){
 		p.expCurrent+=exp;
@@ -269,8 +242,9 @@ public abstract class Enemy extends MovableObject{
 	 * <b>Inputs:</b>
 	 * <br><b>speed</b> - the rate at which the enemy travels over time
 	 * <br><b>duration</b> - the time that the enemy charges at the character
-	 * @panam speed, duration
-	 * @return charge movmenet
+	 * @param speed charge speed
+	 * @param duration charge duration
+	 * @return boolean whether the object will start a charge
 	 */
 	public boolean chargeAtPlayer(int speed,int duration){
 		String dir=ai.isValidStraightLine(game.getWallArray(), Game.getPlayer().getxGridNearest(), Game.getPlayer().getyGridNearest(), getxGridNearest(), getyGridNearest());
@@ -298,8 +272,7 @@ public abstract class Enemy extends MovableObject{
 	
 	/**
 	 * Enemy moves in one of the four directions: up, down, left, right
-	 * @panam direction
-	 * @return movement
+	 * @param dir direction
 	 */
 	public void moveToDirection(String dir){
 		
@@ -319,7 +292,7 @@ public abstract class Enemy extends MovableObject{
 	}
 	
 	/**
-	 * Removes enemy
+	 * Removes enemy and provides points to players
 	 */
 	public void remove(){
 		game.decreaseEnemyCount();
@@ -330,39 +303,38 @@ public abstract class Enemy extends MovableObject{
 		}
 		Player.SCORE+=score;
 	}
-	
+
 	public abstract void useUltimate();
+
 	public abstract void useAbility1();
+
 	public abstract void useAbility2();
 	public abstract void useAbility3();
 	
 	/**
-	 * sets hp
-	 * @panam hp
+	 * sets hp of the object
+	 * @param hp hit points of the object
 	 */
 	public void setHp(double hp){
 		this.hp=hp*Game.DIFFICULTY;
 	}
 	/**
 	 * sets value
-	 * @panam value
-	 * @return set hp
+	 * @param value movement speed of this Enemy
 	 */
 	public void setSpeed(double value){
 		this.spd=(int) (value*Game.DIFFICULTY);
 	}
 	/**
 	 * sets collision damage
-	 * @panam damage
-	 * @return set damage
+	 * @param value collision damage this Enemy will do to players
 	 */
 	public void setCollisionDamage(int value){
 		this.collisionDamage=(int) (value*Game.DIFFICULTY);
 	}
 	/**
 	 * sets experience
-	 * @panam expierence
-	 * @return set experience
+	 * @param value experience that this Enemy will provide when killed
 	 */
 	public void setExp(int value){
 		this.exp=value;

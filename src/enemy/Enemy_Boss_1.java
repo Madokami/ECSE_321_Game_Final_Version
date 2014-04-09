@@ -11,8 +11,8 @@ import gameObject.Point;
 /**
 * <b>Description:</b>
 * <br>
-* New type of enemy boss is defined with corresponding attributes such as speed and abilites
-* <br>Booss spawns at specific coordinates on grid map
+* New type of enemy boss is defined with corresponding attributes such as speed and abilities
+* <br>Boss spawns at specific coordinates on grid map
 * <br>Boss is unique and displayed with images corresponding to its animation
 * @author Team 6
 * @version 1.0
@@ -22,8 +22,9 @@ public class Enemy_Boss_1 extends Enemy{
 	protected ImageSequence attack;
 	/**
 	 * defines new enemy boss
-	 * @panam coordinates, game object
-	 * @return enemy
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Enemy_Boss_1(int x, int y, Game game) {
 		super(x, y, game);
@@ -44,10 +45,6 @@ public class Enemy_Boss_1 extends Enemy{
 		abi2Cd=600;
 	}
 
-	@Override
-	/**
-	 * defines boss attributes
-	 */
 	public void useUltimate() {
 		LinkedList<Point> points = ai.obtainRandomValidPoints(game.getWallArray(), 10);
 		if(points.size()>0){

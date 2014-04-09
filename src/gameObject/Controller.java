@@ -44,6 +44,12 @@ public class Controller{
 	public boolean[][] bombArray;
 	
 	Random r = new Random();
+	
+	/**
+	 * Creates a instance of Controller which is used to add and delete all GameObjects
+	 * @param game the instance of Game to associate with
+	 */
+	
 	public Controller(Game game){
 		this.game=game;
 		wallArray = new boolean[GameSystem.GRIDW+1][GameSystem.GRIDH+1];
@@ -237,7 +243,10 @@ public class Controller{
 	 * <br><b>x</b>,<b>y</b> - coordinates of fire
 	 * <br><b>size</b> - size of explosion
 	 * <br><b>strength</b> - magnitude of damage inflicted to enemy and character from explosion
-	 * @param coordinates, size, strength
+	 * @param x X location of center of explosion
+	 * @param y Y location of center of explosion
+	 * @param size the radius of explosion
+	 * @param strength how much damage the explosion does
 	 */
 	public void createExplosion(int x, int y, int size,int strength){
 		GameSystem.musicPlayer.playExplosion();

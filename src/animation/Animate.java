@@ -26,8 +26,7 @@ public class Animate {
 	Displays different images based on their orientations
 	<br>
 	Each frame of corresponding image is displayed consecutively
-	@param game object o
-	@return animation of o
+	@param o the GameObject to animate
 	*/
 	public static void animate(GameObject o){
 		if(o.direction.equals("up")){
@@ -61,8 +60,7 @@ public class Animate {
 	Retrieves different frames of image from spritesheet
 	<br>
 	Divides spritesheet into equal quadrangles corresponding to individual frames
-	@param player object p
-	@return animation of p
+	@param p the input player
 	*/
 	public static void animateGem(Player p) {
 		p.soulGemImage=p.soulGemSprite.grabImage(1, 1, Player.soulGemWidth, Player.soulGemHeight);
@@ -88,8 +86,7 @@ public class Animate {
 	
 	/**
 	Displays .gif animaions based on their corresponding orientations
-	@param moveable object o
-	@return animation of gif
+	@param o the MovableObject to animate
 	*/
 	public static void animateWithGif(MovableObject o){
 		if(o.getAnimation()==ANIMATION.MOVELEFT) {

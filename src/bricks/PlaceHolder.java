@@ -13,9 +13,7 @@ import game.Game;
 public class PlaceHolder extends Brick{
 
 	/**
-	 * sets place holder
-	 * @param coordinates, game object
-	 * @return place holder
+	 * sets place holder. A place holder is not rendered onto screen but takes up space and blocks other stuff from entering
 	 */
 	public PlaceHolder(int x, int y, Game game) {
 		super(x, y, game);

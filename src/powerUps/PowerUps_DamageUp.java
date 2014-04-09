@@ -15,7 +15,9 @@ import game.Game;
 public class PowerUps_DamageUp extends PowerUps{
 	/**
 	 * defines power ups
-	 * @param coordinates, game object
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public PowerUps_DamageUp(int x, int y, Game game) {
 		super(x, y, game);
@@ -23,11 +25,7 @@ public class PowerUps_DamageUp extends PowerUps{
 		setImage(getSs().grabImage(9,19,getSsWidth(),getSsHeight()));
 	}
 
-	@Override
-	/**
-	 * increases bomb strength by 5
-	 * @param player object
-	 */
+
 	public void applyEffect(Player player) {
 		player.bombStrength+=5;
 	}

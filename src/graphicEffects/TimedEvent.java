@@ -49,7 +49,7 @@ public class TimedEvent {
 	
 	/**
 	 * Loads different images
-	 * @panam game object
+	 * @param game instance of Game
 	 */
 	public TimedEvent(Game game){
 		this.game=game;
@@ -144,7 +144,7 @@ public class TimedEvent {
 	
 	/**
 	 * Renders graphics such as backgrounds, colour, image locations, image size, etc.
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render(Graphics g){
 		if(System.currentTimeMillis()-startTime>duration){
@@ -196,7 +196,7 @@ public class TimedEvent {
 	}
 	/**
 	 * creates white stripes with same length
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void createStripes(Graphics g){
 			g.drawImage(whiteStripes,rand.nextInt(GameSystem.ABSWIDTH)-whiteStripes.getWidth()/2,(int) rand.nextInt(GameSystem.ABSHEIGHT+100)/2,null);
@@ -216,7 +216,8 @@ public class TimedEvent {
 	}
 	/**
 	 * commences an event
-	 * @panam duration, key String
+	 * @param duration time of the event in milliseconds
+	 * @param key lets the Class find what events to activate
 	 */
 	public void startEvent(long duration, String key){
 		this.duration = duration;
@@ -226,8 +227,8 @@ public class TimedEvent {
 	}
 	
 	/**
-	 * shifts an image by specifc height and width
-	 * @panam image object
+	 * shifts an image by specific height and width
+	 * @param image object
 	 */
 	private void translateImage(BufferedImage image){
 		int width = image.getWidth();

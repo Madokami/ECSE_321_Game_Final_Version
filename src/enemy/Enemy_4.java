@@ -18,8 +18,9 @@ public abstract class Enemy_4 extends Enemy{
 	protected ImageSequence attack,open;
 	/**
 	 * defines new enemy
-	 * @panam coordinates, game object
-	 * @return enemy
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */	
 	public Enemy_4(int x, int y, Game game) {
 		super(x, y, game);

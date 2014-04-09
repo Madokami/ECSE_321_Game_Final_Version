@@ -20,8 +20,9 @@ public class Projectile_Scissors extends Projectile{
 	
 	/**
 	 * defines scissor projectile
-	 * @param coordinates, game, game object
-	 * @return projectile
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Projectile_Scissors(int x, int y, Game game, GameObject o) {
 		super(x, y, game, o);

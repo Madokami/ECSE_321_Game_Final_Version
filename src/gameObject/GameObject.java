@@ -95,8 +95,9 @@ public abstract class GameObject{
 		 * <b>Inputs:</b>
 		 * <br><b>x</b>,<b>y</b> - coordinates
 		 * <br><b>game</b> - Game object
-		 * @param coordinates, game object
-		 * @return game object
+		 * @param x coordinate X
+		 * @param y coordinate Y
+		 * @param game instance of Game
 		 */
 		public GameObject(int x, int y,Game game){
 			setSerialNumber();
@@ -166,7 +167,8 @@ public abstract class GameObject{
 		 * <b>Inputs:</b>
 		 * <br><b>width</b> - width of rectangle
 		 * <br><b>height</b> - height of rectangle
-		 * @panam width, height
+		 * @param width the width of the rectangle
+		 * @param height the height of the rectangle
 		 */
 		public final Rectangle getBounds(int width, int height){
 			double xCord=this.x;
@@ -178,7 +180,7 @@ public abstract class GameObject{
 		}
 		/**
 		 * defines invincibility
-		 * @panam duration
+		 * @param time the duration to be invincible
 		 */
 		public void setInvincible(int time){
 			invincibleTime=time;
@@ -187,7 +189,7 @@ public abstract class GameObject{
 		}
 		/**
 		 * defines received damage
-		 * @panam damage
+		 * @param damage how much damage to take
 		 */
 		public void takeDamage(int damage){
 			this.hp-=damage;
@@ -201,8 +203,9 @@ public abstract class GameObject{
 		 * <br><b>value</b> - amount of damage
 		 * <br><b>invincibleDuration</b> - time in which the character does not receive damage
 		 * <br><b>target</b> - target object
-		 * @panam value, duration, target object
-		 * @return application of damage
+		 * @param value - amount of damage to take
+		 * @param invincibleDuration - time in which the character does not receive damage
+		 * @param target - the targeted GameObject that's supposed to take damage
 		 */
 		public void applyDamage(int value, int invincibleDuration, GameObject target){
 			if(target.invincible) return;
@@ -218,8 +221,10 @@ public abstract class GameObject{
 		 * <br><b>value</b> - amount of damage
 		 * <br><b>invincibleDuration</b> - time in which the character does not receive damage
 		 * <br><b>target</b> - target object
-		 * @panam value, duration, target object
-		 * @return application of damage
+		 * @param value - amount of damage to take
+		 * @param randomValue some damage offset
+		 * @param invincibleDuration - time in which the character does not receive damage
+		 * @param target - the targeted GameObject that's supposed to take damage
 		 */
 		public void applyDamage(int value,int randomValue, int invincibleDuration, GameObject target){
 			if(target.invincible) return;
@@ -278,16 +283,9 @@ public abstract class GameObject{
 			this.setChannelling(false);
 		}
 		public abstract void remove();
-		
-		/*
-		public void sendCommand(String s){
-			GameSystem.sendCommand="!"+s+","+Integer.toString(this.serialNumber)+";";
-		}
-		*/
 		/**
 		 * send command
-		 * @panam string s
-		 * @return sending of command
+		 * @param string s
 		 */
 		public void sendCommand(String s){
 			if(!GameSystem.LAN_TWO_PLAYER_MODE){
@@ -309,7 +307,6 @@ public abstract class GameObject{
 		}
 		/**
 		 * send command to other
-		 * @panam string s
 		 */
 		public void sendCommandToOther(String s){
 			if(!GameSystem.LAN_TWO_PLAYER_MODE){

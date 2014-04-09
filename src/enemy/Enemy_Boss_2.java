@@ -7,8 +7,8 @@ import game.Game;
 /**
 * <b>Description:</b>
 * <br>
-* New type of enemy boss is defined with corresponding attributes such as speed and abilites
-* <br>Booss spawns at specific coordinates on grid map
+* New type of enemy boss is defined with corresponding attributes such as speed and abilities
+* <br>Boss spawns at specific coordinates on grid map
 * <br>Boss is unique and displayed with images corresponding to its animation
 * @author Team 6
 * @version 1.0
@@ -17,8 +17,9 @@ import game.Game;
 public class Enemy_Boss_2 extends Enemy{
 	/**
 	 * defines new enemy boss
-	 * @panam coordinates, game object
-	 * @return enemy
+	* @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Enemy_Boss_2(int x, int y, Game game) {
 		super(x, y, game);
@@ -34,20 +35,7 @@ public class Enemy_Boss_2 extends Enemy{
 		ultyCd=150;
 	}
 
-	@Override
-	/**
-	 * defines boss attributes
-	 */
 	public void useUltimate() {
-		/*
-		LinkedList<Point> points = ai.obtainRandomValidPoints(game.getWallArray(), 10);
-		if(points.size()>0){
-			for(int i=0;i<points.size();i++){
-				controller.addEntity(new Bomb(points.get(i).getX(),points.get(i).getY(),game,50,3,50));
-			}
-			ultyTimer=0;
-		}
-		*/
 		if(chargeAtPlayer(40,20)){
 			ultyTimer=0;
 		}

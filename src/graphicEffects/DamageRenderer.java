@@ -27,9 +27,9 @@ public class DamageRenderer {
 	private int y;
 	
 	/**
-	 * renders damage
-	 * @panam game object o
-	 * @return render damage
+	 * creates an instance of DamageRenderer that renders
+	 * how much damage it is taking
+	 * @param o instance of GameObject to render damage from
 	 */
 	public DamageRenderer(GameObject o){
 		owner = o;
@@ -45,8 +45,7 @@ public class DamageRenderer {
 	}
 	/**
 	 * renders damage
-	 * @panam damage value
-	 * @return render damage value
+	 * @param damageValue value of damage to be rendered onto screen
 	 */
 	public void renderDamage(int damageValue){
 		if(counter[currentCounter]<renderDuration) {
@@ -62,7 +61,8 @@ public class DamageRenderer {
 		y=(int)owner.getYAbsolute();
 	}
 	/**
-	 * uses current conditions to determine next iteration
+	 * uses current conditions to determine next iteration.
+	 * updates variables
 	 */
 	public void tick(){
 		for(int i=0;i<counter.length;i++){
@@ -71,8 +71,7 @@ public class DamageRenderer {
 	}
 	/**
 	 * renders graphics
-	 * @panam graphic object
-	 * @return render graphic
+	 * @param g graphic object
 	 */
 	public void render(Graphics g){
 		for(int i=0;i<counter.length;i++){

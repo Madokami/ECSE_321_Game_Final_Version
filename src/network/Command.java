@@ -13,8 +13,6 @@ public class Command {
 	
 	/**
 	 * defines command
-	 * @panam command, key integer
-	 * @return command
 	 */
 	public Command(String command,int key){
 		this.command = command;

@@ -17,25 +17,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class AudioLoader {
 	AudioInputStream a;
-	/*
-	public void loadAudio(String path,Clip c){
-		try {
-			a = AudioSystem.getAudioInputStream(getClass().getResourceAsStream(path));
-			try {
-				c.open(a);
-			} catch (LineUnavailableException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (UnsupportedAudioFileException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	*/
 	
 	/**
 	 * Load a audio clip

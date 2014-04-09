@@ -384,7 +384,7 @@ public class Game {
 	}
 	/**
 	 * renders two player skills
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	private void renderTwoPlayerSkills(Graphics g) {
 		int shift = 454;
@@ -753,7 +753,7 @@ public class Game {
 	}
 	/**
 	 * renders the health of the player
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void renderPlayerHealth(Graphics g){
 		int x = 241;
@@ -790,7 +790,7 @@ public class Game {
 	}
 	/**
 	 * renders player mana
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void renderPlayerMana(Graphics g){
 		int x = 241;
@@ -856,7 +856,7 @@ public class Game {
 	}
 	/**
 	 * renders stage objects
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void renderStageObjects(Graphics g){
 		if(curLevel==1){
@@ -897,6 +897,9 @@ public class Game {
 		}
 		
 	}
+	/**
+	 * calculates the score of the player for the current stage
+	 */
 	public void calculateTotalScore(){
 		int timeSpent = GameTimer.mGameTime*60 + GameTimer.sGameTime;
 		TOTAL_SCORE = Player.SCORE*100/timeSpent;

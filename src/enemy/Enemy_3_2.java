@@ -16,8 +16,9 @@ import game.Game;
 public class Enemy_3_2 extends Enemy{
 	/**
 	 * defines new enemy
-	 * @panam coordinates, game object
-	 * @return enemy
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Enemy_3_2(int x, int y, Game game) {
 		super(x, y, game);

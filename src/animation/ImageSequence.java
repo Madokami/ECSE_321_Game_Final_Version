@@ -98,7 +98,7 @@ public class ImageSequence {
 	}
 	/**
 	 * scales the dimensions
-	 * @panam ratio
+	 * @param ratio
 	 * @return scale
 	 */
 	public void scale(double ratio){

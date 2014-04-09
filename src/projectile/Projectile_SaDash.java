@@ -20,7 +20,9 @@ public class Projectile_SaDash extends Projectile{
 	int durationTimer;
 	/**
 	 * defines SaDash
-	 * @param coordinates, game, game object
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Projectile_SaDash(int x, int y, Game game, GameObject o, int duration) {
 		super(x, y, game, o);

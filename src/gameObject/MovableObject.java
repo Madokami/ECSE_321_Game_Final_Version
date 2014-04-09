@@ -97,8 +97,9 @@ public abstract class MovableObject extends GameObject{
 	 * <b>Inputs:</b>
 	 * <br><b>x</b>,<b>y</b> - coordinates
 	 * <br><b>game</b> - Game object
-	 * @panam coordinates, game object
-	 * @return moveable object
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public MovableObject(int x, int y, Game game) {
 		super(x, y, game);
@@ -332,7 +333,9 @@ public abstract class MovableObject extends GameObject{
 		
 		return false;
 	}
-	//updates the player position based on the grid map
+	/**updates the player position based on the grid map
+	 * 
+	 */
 	public void updatePosition(){
 		//maps the position to the closest "grid"
 		if(y-curY>=GameSystem.GRID_SIZE/2){
@@ -372,27 +375,6 @@ public abstract class MovableObject extends GameObject{
 			y=yTemp;
 			lastY--;
 		}
-		//only updates nextX and nextY when the move buttons are being pressed down
-		/*
-		if(movable){
-			if(direction.equals("right")){
-					nextX=lastX+1;
-					nextY=lastY;
-			}
-			else if(direction.equals("left")){
-				nextX=lastX-1;
-				nextY=lastY;
-			}
-			else if(direction.equals("up")){
-				nextY=lastY-1;
-				nextX=lastX;
-			}
-			else if(direction.equals("down")){
-				nextY=lastY+1;
-				nextX=lastX;
-			}
-		}
-		*/
 		
 	}
 	//sets next coordinates
@@ -413,17 +395,10 @@ public abstract class MovableObject extends GameObject{
 			nextX=lastX+1;
 			nextY=lastY;
 		}
-		/*
-		else if(orientation==ORIENTATION.STAND){
-			nextX=lastX;
-			nextY=lastY;
-		}
-		*/
 	}
 	/**
 	 * checks if path is blocked by obstacle
-	 * @panam previous coordinates, next coordinates
-	 * @return check if blocked
+	 * @return true if is blocked
 	 */
 	public boolean checkIfBlocked(int lastX,int lastY,int nextX, int nextY){
 		try{
@@ -444,13 +419,6 @@ public abstract class MovableObject extends GameObject{
 	 */
 	public boolean checkIfBlocked(){
 		setNextXY();
-		/*if(Physics.hitWall(this, game.wi)){
-			blocked=true;
-		}
-		else{
-			blocked=false;
-		}
-		*/
 		
 		try{
 			if(game.getController().wallArray[lastX][lastY]||game.getController().wallArray[nextX][nextY]){
@@ -529,8 +497,6 @@ public abstract class MovableObject extends GameObject{
 	
 	/**
 	 * initiates character charge
-	 * @panam magnitude, duration
-	 * @return stating of charge
 	 */
 	public void startCharge(int value, int duration){
 		chargeSpeed=value;
@@ -583,9 +549,7 @@ public abstract class MovableObject extends GameObject{
 		if(dash!=null) this.sequence.startSequence(dash);
 	}
 	/**
-	 * defines damage
-	 * @panam duration
-	 * @return starting of charge
+	 * starts the damage sequence, during which the damaged GameObject can not engage in other actions
 	 */
 	private void startDamaged(int duration){
 		damaged=true;
@@ -594,9 +558,7 @@ public abstract class MovableObject extends GameObject{
 	}
 	
 	/**
-	 * stops damage
-	 * @panam damage
-	 * @return stops damage
+	 * stops the damaged state
 	 */
 	private void stopDamaged(){
 		if(!damaged) return;
@@ -727,10 +689,21 @@ public abstract class MovableObject extends GameObject{
 		}
 		return false;
 	}
-	
+	/**
+	 * defines what the Enemy will do when it uses an ability
+	 */
 	public abstract void useUltimate();
+	/**
+	 * defines what the Enemy will do when it uses an ability
+	 */
 	public abstract void useAbility1();
+	/**
+	 * defines what the Enemy will do when it uses an ability
+	 */
 	public abstract void useAbility2();
+	/**
+	 * defines what the Enemy will do when it uses an ability
+	 */
 	public abstract void useAbility3();
 	
 	public void takeDamage(int damage){

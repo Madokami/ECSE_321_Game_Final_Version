@@ -24,9 +24,10 @@ import projectile.Projectile;
 */
 public class Physics {
 	/**
-	 * defines collision
-	 * @panam player object, powerups list
-	 * @return powerups list
+	 * defines collision between player and linkedList of powerups
+	 * @param p player object
+	 * @param powerUpList list of powerups
+	 * @return the index of the powerUp collided, -1 if does not exist
 	 */
 	public static int collision(Player p,LinkedList<PowerUps> powerUpList){
 		for(int i=0;i<powerUpList.size();i++){
@@ -38,8 +39,7 @@ public class Physics {
 	}
 	/**
 	 * defines when player moves onto location of bomb
-	 * @panam game object, bomb lists
-	 * @return bombs list
+	 * @return the index of the bomb collided, -1 if does not exist
 	 */
 	public static int onTopOfBomb(GameObject gameObject,LinkedList<Bomb> bList){
 		for(int i=0;i<bList.size();i++){
@@ -51,8 +51,7 @@ public class Physics {
 	}
 	/**
 	 * defines when player is behind bomb
-	 * @panam game object, bomb list
-	 * @return behind bomb
+	 * @return the index of the bomb on top of, -1 if does not exist
 	 */
 	public static int behindBomb(GameObject gameObject,LinkedList<Bomb> bList){
 		if(gameObject.orientation==ORIENTATION.UP){
@@ -87,8 +86,7 @@ public class Physics {
 	}
 	/**
 	 * defines when collision occurs
-	 * @panam game object, enemy list
-	 * @return enemy list
+	 * @return a LinkedList of Enemy that is collided by w
 	 */
 	public static LinkedList<Enemy> collision(GameObject w,LinkedList<Enemy> ei){
 		LinkedList<Enemy> ret= new LinkedList<Enemy>();
@@ -100,9 +98,8 @@ public class Physics {
 		return ret;
 	}
 	/**
-	 * defines when character hits player
-	 * @panam game object, player list
-	 * @return player list
+	 * defines when something hits player
+	 * @return a LinkedList of Player that is collided by w
 	 */
 	public static LinkedList<Player> hitPlayer(GameObject w,LinkedList<Player> players){
 		LinkedList<Player> ret= new LinkedList<Player>();
@@ -117,8 +114,7 @@ public class Physics {
 	
 	/**
 	 * defines when player is in same coordinates as enemy
-	 * @panam enemy, enemy list
-	 * @return check if overlap of enemies
+	 * @return true if there is overlap
 	 */
 	public static boolean overlapWithOtherEnemies(Enemy w,LinkedList<Enemy> ei){
 		for(int i=0;i<ei.size();i++){
@@ -133,7 +129,7 @@ public class Physics {
 	}
 	/**
 	 * defines when player is blocked
-	 * @panam enemy source, enemy list, coordinates
+	 * @return true if is blocked
 	 */
 	public static boolean blockedByEnemy(Enemy source, LinkedList<Enemy> list,int targetX,int targetY){
 		for(int i=0;i<list.size();i++){
@@ -148,8 +144,7 @@ public class Physics {
 	}
 	/**
 	 * defines when player hits bomb
-	 * @panam game object, bomb list
-	 * @return hit bomb
+	 * @return index of bomb hit, -1 if does not exist
 	 */
 	public static int hitBomb(GameObject w,LinkedList<Bomb> list){
 		for(int i=0;i<list.size();i++){
@@ -161,8 +156,7 @@ public class Physics {
 	}
 	/**
 	 * defines when there is a collision with the wall
-	 * @panam game object, brick list
-	 * @return hit wall
+	 * @return index of wall hit, -1 if does not exist
 	 */
 	public static int hitWall(GameObject f,LinkedList<HitableBrick> linkedList){
 		for(int i=0;i<linkedList.size();i++){
@@ -173,8 +167,8 @@ public class Physics {
 	}
 	/**
 	 * defines place holder
-	 * @panam game object, place holder list
-	 * @return hit place holder
+	 * @param game object, place holder list
+	 * @return index of placeHolder hit, -1 if does not exist
 	 */
 	public static int hitPlaceHolder(GameObject f,LinkedList<PlaceHolder> linkedList){
 		for(int i=0;i<linkedList.size();i++){
@@ -185,7 +179,7 @@ public class Physics {
 	}
 	/**
 	 * defines collision
-	 * @panam game object coordinates
+	 * @param game object coordinates
 	 * @return collision
 	 */
 	public static boolean collide(GameObject x,GameObject y){
@@ -196,8 +190,8 @@ public class Physics {
 	}
 	/**
 	 * defines projectile hit
-	 * @panam game object, projectile list
-	 * @return projectile hit list
+	 * @param game object, projectile list
+	 * @return LinkedList of Projectile that x collided with
 	 */
 	public static LinkedList<Projectile> projectileHit(GameObject x,LinkedList<Projectile> list){
 		LinkedList<Projectile> ret = new LinkedList<Projectile>();

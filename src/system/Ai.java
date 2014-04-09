@@ -42,9 +42,10 @@ public class Ai
 	 * <br><br>
 	 * <b>Inputs:</b>
 	 * <br><b>map</b> - two-dimensional array that contains coordinates
-	 * <br><b>number</b> - indicates size of for loop when manipulating points
-	 * @param map coordinates, loop size
-	 * @return random valid points
+	 * <br><b>number</b> - number of points to pick out
+	 * @param map - two-dimensional array that contains coordinates
+	 * @param number - number of points to pick out
+	 * @return LinkedList of random valid points
 	 */
 	public LinkedList<Point> obtainRandomValidPoints(boolean[][] map, int number){
 		LinkedList<Point> ret= new LinkedList<Point>();
@@ -71,12 +72,12 @@ public class Ai
 	}
 	
 	/**
-	 * Checks if enemy is within certain vicinity of character
+	 * Checks if enemy is right next to the Player
 	 * <br><br>
 	 * <b>Inputs:</b>
 	 * <br><b>pX</b>,<b>pY</b> - coordinates of character
 	 * <br><b>aiX</b><b>aiY</b> - coordinates of enemy
-	 * @param player and enemy coordinates
+	 * @return true if the enemy is right next to the player
 	 */
 	public boolean nextToPlayer(int pX,int pY,int aiX,int aiY){
 		if(pX==aiX&&pY==aiY){
@@ -102,8 +103,7 @@ public class Ai
 	 * <br><b>m</b> - map
 	 * <br><b>pX</b>,<b>pY</b> - coordinates of character
 	 * <br><b>aiX</b><b>aiY</b> - coordinates of enemy
-	 * @param player and enemy coordinates
-	 * @return check if on player
+	 * @return true if the enemy is on top the player
 	 */
 	public boolean onTopOfPlayer(int pX,int pY,int aiX,int aiY){
 		if(pX==aiX&&pY==aiY){
@@ -118,8 +118,7 @@ public class Ai
 	 * <br><b>m</b> - map
 	 * <br><b>pX</b>,<b>pY</b> - coordinates of character
 	 * <br><b>aiX</b><b>aiY</b> - coordinates of enemy
-	 * @param player and enemy coordinates
-	 * @return check is straight line
+	 * @return direction the ai should move toward to reach player
 	 */
 	public String isValidStraightLine(boolean[][] m,int pX,int pY,int aiX,int aiY){
 		if(pX==aiX&&pY==aiY) return "stop";
@@ -165,8 +164,7 @@ public class Ai
 	 * <br><b>m</b> - map
 	 * <br><b>pX</b>,<b>pY</b> - coordinates of character
 	 * <br><b>aiX</b><b>aiY</b> - coordinates of enemy
-	 * @param player and enemy coordinates
-	 * @return steps
+	 * @return direction the ai should move next
 	 */
 	public String makeStep(boolean[][] m,int playerx,int playery,int aix,int aiy)
 	{
@@ -192,11 +190,7 @@ public class Ai
 		search(1,1);
 		return(d);
 	}
-	/**
-	 * Searches coordinates of map
-	 * @param player and enemy coordinates
-	 * @return searching of points
-	 */
+
 	private void search(int a, int n)
 	{
 		if (n==0) 

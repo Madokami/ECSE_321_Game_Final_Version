@@ -17,7 +17,7 @@ public class SpecialEffects {
 	private boolean isFadeWhite=false;
 	private boolean isFadeWhiteReversed=false;
 	
-	private BufferedImage[] white; //white0,white1,white2,white3,white4,white5,white6,white7,white8,white9;
+	private BufferedImage[] white; 
 	private BufferedImageLoader loader;
 	
 	public SpecialEffects(){
@@ -28,19 +28,6 @@ public class SpecialEffects {
 			String s = "/image/white".concat(Integer.toString(i)).concat(".png");
 			white[i]=loader.loadImage(s);
 		}
-		/*
-		white0=loader.loadImage("/image/white0.png");
-		white1=loader.loadImage("/image/white1.png");
-		white2=loader.loadImage("/image/white2.png");
-		white3=loader.loadImage("/image/white3.png");
-		white4=loader.loadImage("/image/white4.png");
-		white5=loader.loadImage("/image/white5.png");
-		white6=loader.loadImage("/image/white6.png");
-		white7=loader.loadImage("/image/white7.png");
-		white8=loader.loadImage("/image/white8.png");
-		white9=loader.loadImage("/image/white9.png");
-		*/
-		
 	}
 	
 	/**
@@ -106,7 +93,6 @@ public class SpecialEffects {
 		else if(fadeWhiteReversed>=10){
 			return;
 		}
-		//do stuff
 		g.drawImage(white[9-fadeWhiteReversed], 0, 0,GameSystem.ABSWIDTH+10,GameSystem.ABSHEIGHT+10,null);
 			
 	}

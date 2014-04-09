@@ -24,8 +24,6 @@ public abstract class Brick extends GameObject{
 	 * <b>Inputs:</b>
 	 * <b>x</b>,<b>y</b> - coordinates of brick image
 	 * <b>game</b> - Game object
-	 * @panam coordinates, game object
-	 * @return brick
 	 */
 	public Brick(int x, int y, Game game) {
 		super(x, y, game);

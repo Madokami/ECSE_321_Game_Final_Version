@@ -22,7 +22,6 @@ public class Animation {
 	/**
 	* Defines MoveableObject
 	* @param o instance of a MovableObject
-	* @return Animation
 	*/
 	public Animation(MovableObject o){
 		this.owner=o;

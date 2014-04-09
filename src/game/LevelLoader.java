@@ -57,7 +57,7 @@ public class LevelLoader {
 	
 	/**
 	 * loads level
-	 * @panam game object
+	 * @param game instance of Game
 	 */
 	public LevelLoader(Game game){
 		this.game=game;
@@ -68,10 +68,9 @@ public class LevelLoader {
 		gif=loader.loadGif("/witch1.gif");
 	}
 	/**
-	 * loads level for two players at same time
-	 * @panam game object
+	 * loads level for two players at the same time
 	 */
-	public synchronized void load(){
+	public void load(){
 		int stage = game.getCurLevel();
 		
 		
@@ -156,14 +155,6 @@ public class LevelLoader {
 	public void stage2(){
 		GameSystem.turnOnBgm("/sound/music/stage1.wav");
 		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
-		/*
-		createPlayer(1,2);
-		for(int i=4;i<GameSystem.GRIDW-4;i++){
-			game.c.addEntity(new AdelbertMini(i,3,game));
-			game.enemyCount++;
-			game.c.addEntity(new Brick(i,GameSystem.GRIDH-2,game));
-		}
-		*/
 		int[][] data = new int[][]{
 				{2,2,2,0,0,0,0,3,3,0,0,0,0,2,2,2},
 				{2,2,11,0,0,2,0,2,2,0,2,0,12,0,2,2},
@@ -200,11 +191,6 @@ public class LevelLoader {
 		};
 		this.loadFromArray(data);
 	}
-	
-
-	
-		//GameSystem.turnOnBgm("/sound/music/theme2.wav");
-
 	
 		public void stage4(){
 		GameSystem.turnOnBgm("/sound/music/stage2.wav");
@@ -429,7 +415,7 @@ public class LevelLoader {
 	
 	/**
 	 * renders start
-	 * @panam duration
+	 * @param duration time the title is rendered
 	 */
 	public void renderStart(int duration){
 		this.renderStageStart = System.currentTimeMillis();
@@ -437,8 +423,8 @@ public class LevelLoader {
 	}
 	
 	/**
-	 * redners graphics
-	 * @panam graphic object
+	 * renders graphics
+	 * @param g graphic object
 	 */
 	public void render(Graphics g){
 		title = "Stage".concat(" ").concat(Integer.toString(game.getCurLevel()));
@@ -457,7 +443,8 @@ public class LevelLoader {
 	
 	/**
 	 * Creates player from one of the five character classes
-	 * @panam i j
+	 * @param i x location of the GameObject to be created
+	 * @param j y location of the GameObject to be created
 	 */
 	private void createPlayer(int i, int j) {
 		if(game.cChosen==Game.CHARACTER.MADOKA){
@@ -478,8 +465,9 @@ public class LevelLoader {
 	}
 	
 	/**
-	 * Creates player from one of the five character classes
-	 * @panam i j
+	 * Creates player2 from one of the five character classes
+	 * @param i x location of the GameObject to be created
+	 * @param j y location of the GameObject to be created
 	 */
 	private void createPlayer2(int i, int j) {
 		if(game.cChosenP2==Game.CHARACTER.MADOKA){
@@ -508,7 +496,7 @@ public class LevelLoader {
 	
 	/**
 	 * Loads map graphics data
-	 * @panam mapData array
+	 * @param mapData 2 dimensional int array resembling the map
 	 */
 	private void loadFromArray(int[][] mapData){
 		for(int i=0;i<mapData.length;i++){
@@ -604,10 +592,7 @@ public class LevelLoader {
 			}
 		}
 	}
-	/**
-	 * adds enemy
-	 * @panam enemy object
-	 */
+	
 	private void addEnemy(Enemy e){
 		game.getController().addEntity(e);
 		game.setEnemyCount(game.getEnemyCount() + 1);

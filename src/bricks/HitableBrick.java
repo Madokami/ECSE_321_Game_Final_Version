@@ -12,9 +12,7 @@ import game.Game;
 */
 public class HitableBrick extends Brick{
 	/**
-	 * defines brick
-	 * @panam coordinates, game object
-	 * @return brick
+	 * defines a brick that can be hit by fire and destroyed
 	 */
 	public HitableBrick(int x, int y, Game game) {
 		super(x, y, game);

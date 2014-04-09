@@ -20,7 +20,9 @@ public class Projectile_SpawnEffect extends Projectile{
 	private int duration = 15;
 	/**
 	 * defines spawn effect projectile
-	 * @param coordinates, game, game object
+	 * @param x coordinate X
+	 * @param y coordinate Y
+	 * @param game instance of Game
 	 */
 	public Projectile_SpawnEffect(int x, int y, Game game, GameObject o) {
 		super(x, y, game, o);
