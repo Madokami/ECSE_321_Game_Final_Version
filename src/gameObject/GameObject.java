@@ -95,7 +95,7 @@ public abstract class GameObject{
 		 * <b>Inputs:</b>
 		 * <br><b>x</b>,<b>y</b> - coordinates
 		 * <br><b>game</b> - Game object
-		 * @panam coordinates, game object
+		 * @param coordinates, game object
 		 * @return game object
 		 */
 		public GameObject(int x, int y,Game game){

@@ -22,7 +22,8 @@ public class ImageSequence {
 	private double animationSpeed;
 	/**
 	 * defines image sequence
-	 * @panam path, frames
+	 * @param path the path to the file with number the number at the end
+	 * @param frames number of images in this sequence
 	 * @return image sequence
 	 */
 	public ImageSequence(String path,int frames){

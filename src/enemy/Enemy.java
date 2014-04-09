@@ -39,7 +39,9 @@ public abstract class Enemy extends MovableObject{
 	 * <b>Inputs:</b>
 	 * <br><b>x</b>,<b>y</b> - coordinates of enemy
 	 * <br><b>game</b> - Game object
-	 * @panam coordinates, game object
+	 * @param x coordinate X in grids
+	 * @param y coordinate Y in grids
+	 * @param game instance of Game
 	 * @return enemy
 	 */
 	public Enemy(int x,int y, Game game){
@@ -164,11 +166,12 @@ public abstract class Enemy extends MovableObject{
 	}
 	/**
 	 * changes experience of player
-	 * @panam player object
+	 * @param player object
 	 * @return points of player
 	 */
 	public void providePoints(Player p){
 		p.expCurrent+=exp;
+		
 	}
 	
 	/**

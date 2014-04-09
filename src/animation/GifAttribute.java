@@ -22,8 +22,8 @@ public class GifAttribute {
 	private Image image;
 	
 	/**
-	 * defines .git image attributes
-	 * @panam gif image
+	 * defines .gif image attributes
+	 * @param gif an Image
 	 * @return gif attributes
 	 */
 	public GifAttribute(Image gif){

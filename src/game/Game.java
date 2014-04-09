@@ -18,12 +18,8 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 
-import network.Client;
-import network.CommandHandler;
-import network.Server;
 import bomb.Bomb;
 import bomb.Fire;
-import bricks.Brick;
 import bricks.HitableBrick;
 import bricks.PlaceHolder;
 import player.Player;
@@ -261,7 +257,7 @@ public class Game {
 	}
 	/**
 	 * renders stage title
-	 * @panam duration
+	 * @param duration int
 	 */
 	public void renderStageTitle(int duration){
 		levelLoader.renderStart(duration);
@@ -293,7 +289,7 @@ public class Game {
 	/**
 	 * Renders graphics
 	 * <br>Incorporates background, maps, obstacles, characters, enemies, etc.
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	public void render(Graphics g){
 	
@@ -349,7 +345,7 @@ public class Game {
 	
 	/**
 	 * renders two player game
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	private void renderTwoPlayerSoulGem(Graphics g) {
 		int soulX = GameSystem.GAME_WIDTH/2-440;
@@ -373,7 +369,7 @@ public class Game {
 
 	/**
 	 * renders two player level
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	private void renderTwoPlayerLevel(Graphics g) {
 		int shift = 454;
@@ -517,7 +513,7 @@ public class Game {
 	}
 	/**
 	 * renders two player experience
-	 * @panam graphic object
+	 * @param g graphic object
 	 */
 	private void renderTwoPlayerExp(Graphics g) {
 		int shift = 454;
@@ -531,12 +527,12 @@ public class Game {
 		g.drawImage(player2.expBar, x+shift, GameSystem.GAME_HEIGHT+93, null);
 		double ratio2 = player2.expCurrent/player2.levelUpdater.expRequired;
 		g.setColor(Color.YELLOW);
-		g.fillRect(x+shift, GameSystem.GAME_HEIGHT+96, (int)(ratio*67), 4);
+		g.fillRect(x+shift, GameSystem.GAME_HEIGHT+96, (int)(ratio2*67), 4);
 		
 	}
 	/**
 	 * renders two player status
-	 * @panam graphic object
+	 * @param g graphics object
 	 */
 	private void renderTwoPlayerStatus(Graphics g) {
 		int shift = 454;
@@ -584,7 +580,7 @@ public class Game {
 
 	/**
 	 * Interface between key that is pressedby user and the function that it corresponds to
-	 * @panam key integer
+	 * @param key integer
 	 */
 	public void keyPressed(int key) {
 		if(key==KeyEvent.VK_P){
@@ -674,7 +670,7 @@ public class Game {
 	}
 	/**
 	 * defines key that is released and its effects to players movement
-	 * @panam key integer
+	 * @param key integer
 	 */
 	public void keyReleased(int key) {
 		if(key==GameSystem.RIGHT&&player.orientation==ORIENTATION.RIGHT){			
@@ -919,10 +915,10 @@ public class Game {
 		return player2;
 	}
 	public void setPlayer(Player p) {
-		this.player = p;
+		Game.player = p;
 	}
 	public void setPlayer2(Player p){
-		this.player2=p;
+		Game.player2=p;
 	}
 
 	public BufferedImage getBackground() {
@@ -1058,7 +1054,7 @@ public class Game {
 	}
 
 	public void setCurLevel(int curLevel) {
-		this.curLevel = curLevel;
+		Game.curLevel = curLevel;
 	}
 
 	

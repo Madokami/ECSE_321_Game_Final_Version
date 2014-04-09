@@ -21,8 +21,8 @@ public class Animation {
 	
 	/**
 	* Defines MoveableObject
-	* @panam moveable object o
-	* @return animation
+	* @param o instance of a MovableObject
+	* @return Animation
 	*/
 	public Animation(MovableObject o){
 		this.owner=o;
@@ -85,6 +85,7 @@ public class Animation {
 	
 	/**
 	* Displays animated image at beginning of cycle
+	* @param sequence a ImageSequence
 	*/
 	public void startSequence(ImageSequence sequence){
 		if(sequencePlaying) return;
@@ -100,8 +101,8 @@ public class Animation {
 	
 	/**
 	* Displays animated image at the beginning of cycle
-	* @panam sequence, next sequence
-	* @return start sequence
+	* @param sequence first imageSequcence to be played
+	* @param sequence next ImageSequence to be played
 	*/
 	public void startSequence(ImageSequence sequence, ImageSequence nextSequence ){
 		if(oneTimeSequence) return;
@@ -118,8 +119,7 @@ public class Animation {
 	
 	/**
 	* Displays animated image at the beginning of cycle
-	* @panam sequence
-	* @return start time sequence
+	* @param sequence a ImageSequence
 	*/
 	public void startOneTimeSequence(ImageSequence sequence){
 		oneTimeSequence=true;
