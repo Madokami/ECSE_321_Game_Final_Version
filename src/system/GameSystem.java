@@ -423,7 +423,9 @@ public class GameSystem extends Canvas implements Runnable {
 	 * play "confirm" sound
 	 */
 	public static void playConfirm() {
-		musicPlayer.playSound("/sound/choice2.wav");
+		try{
+			musicPlayer.playSound("/sound/choice2.wav");
+		} catch(NullPointerException e){} 
 	}
 
 	/**

@@ -3,7 +3,7 @@ SP_R:/image/talk/ho_ms.png
 AUDIO_BGM:/sound/music/bgm1.wav
 
 Welcome to Magibomb.
-This was opposed to be a storyline.
+This was supposed to be a storyline.
 However, since group 6 is out of 
 time, this is now a tutorial....
 Regardless, the script handling
