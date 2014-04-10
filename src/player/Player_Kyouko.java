@@ -80,8 +80,11 @@ public class Player_Kyouko extends Player{
 	* applies unique character attributes
 	*/
 	public void useUltimate(){
+		if(game.isTimeStop()){
+			return;
+		}
 		if(ultyTimer<ultyCd){
-			GameSystem.playError();
+			//GameSystem.playError();
 			this.getpVoice().playCdSound();
 			return;
 		}

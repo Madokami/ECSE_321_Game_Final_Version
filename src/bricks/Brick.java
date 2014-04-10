@@ -28,7 +28,7 @@ public abstract class Brick extends GameObject{
 	public Brick(int x, int y, Game game) {
 		super(x, y, game);
 		hp=30;
-		setImage(GameSystem.loader.loadImage("/image/stage/stage1/brick1.png"));
+		setImage(GameSystem.loader.loadImage("/image/stage/brick1.png"));
 		setImageWidth(GameSystem.GRID_SIZE);
 		setImageHeight(GameSystem.GRID_SIZE);
 		//this.renderYShift=-GameSystem.GRID_SIZE*1/4;

@@ -1,0 +1,7 @@
+AUDIO_BGM:/sound/music/theme1.wav
+MADOKA:
+SP_R:/image/talk/ho_ms.png
+Haibo is the best!
+
+
+END

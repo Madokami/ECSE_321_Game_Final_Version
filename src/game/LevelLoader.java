@@ -195,7 +195,7 @@ public class LevelLoader {
 		public void stage4(){
 		GameSystem.turnOnBgm("/sound/music/stage2.wav");
 
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch2Bg.jpg"));
 		int[][] data = new int[][]{
 				{3,0,0,2,2,0,0,0,21,2,2,0,0,3,2,2},
 				{3,1,9,2,2,0,0,0,0,2,2,0,0,3,2,2},
@@ -216,7 +216,7 @@ public class LevelLoader {
 	 */
 	public void stage5(){
 		GameSystem.turnOnBgm("/sound/music/stage2.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch2Bg.jpg"));
 		int[][] data = new int[][]{
 				{3,0,0,2,2,0,0,3,3,0,0,2,2,0,21,0},
 				{3,1,9,2,0,2,0,0,0,0,2,0,2,0,0,0},
@@ -237,7 +237,7 @@ public class LevelLoader {
 	 */
 	public void stage6(){
 		GameSystem.turnOnBgm("/sound/music/boss1.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch2Bg.jpg"));
 		int[][] data = new int[][]{
 				{0,1,9,2,2,0,0,2,2,0,0,2,2,0,0,0},
 				{0,0,2,0,0,2,0,0,0,0,2,0,0,21,2,0},
@@ -260,7 +260,7 @@ public class LevelLoader {
 	 */
 	public void stage7(){
 		GameSystem.turnOnBgm("/sound/music/stage3.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch3Bg.jpg"));
 		int[][] data = new int[][]{
 				{1,9,0,0,2,2,2,2,2,0,0,2,2,2,2,2},
 				{3,3,0,0,0,0,0,0,0,31,0,0,0,0,0,0},
@@ -283,7 +283,7 @@ public class LevelLoader {
 	 */
 	public void stage8(){
 		GameSystem.turnOnBgm("/sound/music/stage3.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch3Bg.jpg"));
 		int[][] data = new int[][]{
 				{2,2,2,2,2,2,2,2,2,2,2,3,3,3,2,2},
 				{1,9,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
@@ -304,7 +304,7 @@ public class LevelLoader {
 	 */
 	public void stage9(){
 		GameSystem.turnOnBgm("/sound/music/boss1.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch3Bg.jpg"));
 		int[][] data = new int[][]{
 				{1,9,0,2,0,2,2,2,2,2,2,0,2,0,0,31},
 				{0,0,0,2,0,2,2,2,2,2,2,0,2,0,0,0},
@@ -324,7 +324,7 @@ public class LevelLoader {
 	 */
 	public void stage10(){
 		GameSystem.turnOnBgm("/sound/music/stage5.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch5Bg.jpg"));
 		int[][] data = new int[][]{
 				{9,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0},
 				{3,3,0,0,3,3,3,3,2,2,2,2,2,0,51,0},
@@ -344,7 +344,7 @@ public class LevelLoader {
 	 */
 	public void stage11(){
 		GameSystem.turnOnBgm("/sound/music/stage5.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch5Bg.jpg"));
 		int[][] data = new int[][]{
 				{2,2,0,0,0,3,3,0,0,0,0,0,2,2,0,0},
 				{2,2,0,0,0,0,0,0,2,2,2,0,2,2,0,0},
@@ -364,7 +364,7 @@ public class LevelLoader {
 	 */
 	public void stage12(){
 		GameSystem.turnOnBgm("/sound/music/boss2.wav");
-		game.setBackground(loader.loadImage("/image/stage/ch1Bg.jpg"));
+		game.setBackground(loader.loadImage("/image/stage/ch5Bg.jpg"));
 		int[][] data = new int[][]{
 				{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
 				{2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
@@ -428,10 +428,10 @@ public class LevelLoader {
 	 */
 	public void render(Graphics g){
 		title = "Stage".concat(" ").concat(Integer.toString(game.getCurLevel()));
-		g.drawImage(gif, 100, 100, null);
+		g.drawImage(gif, 200, 200, null);
 		g.setFont(new Font("arial",Font.BOLD,32));
 		g.setColor(Color.RED);
-		g.drawString(title, 270, 240);
+		g.drawString(title, 390, 180);
 		if(System.currentTimeMillis()-renderStageStart>duration){
 			Game.TITLE_DONE=true;
 			if(GameSystem.LAN_TWO_PLAYER_MODE){
@@ -585,6 +585,7 @@ public class LevelLoader {
 				}
 				else if(mapData[i][j]==2){
 					addBrick(new HitableBrick(j+1,i+1,game));
+					
 				}
 				else if(mapData[i][j]==3){
 					addPlaceHolder(new PlaceHolder(j+1,i+1,game));
@@ -599,6 +600,16 @@ public class LevelLoader {
 	}
 	private void addBrick(HitableBrick b){
 		game.getController().addEntity(b);
+		int index = game.getController().getBrickList().size()-1;
+		if(Game.curLevel==4||Game.curLevel==5||Game.curLevel==6){
+			game.getController().getBrickList().get(index).setImage(GameSystem.loader.loadImage("/image/stage/brick2.png"));
+		}
+		else if(Game.curLevel==7||Game.curLevel==8||Game.curLevel==9){
+			game.getController().getBrickList().get(index).setImage(GameSystem.loader.loadImage("/image/stage/brick3.png"));
+		}
+		else if(Game.curLevel==10||Game.curLevel==11||Game.curLevel==12){
+			game.getController().getBrickList().get(index).setImage(GameSystem.loader.loadImage("/image/stage/brick5.png"));
+		}
 	}
 	private void addPlaceHolder(PlaceHolder b){
 		game.getController().addEntity(b);

@@ -50,7 +50,7 @@ public class Enemy_Boss_5 extends Enemy{
 		setCollisionDamage(50);
 		setExp(1000);
 		
-		abi1Cd=60;
+		abi1Cd=5;
 		abi2Cd=420;
 		ultyCd=120;
 		
@@ -141,7 +141,7 @@ public class Enemy_Boss_5 extends Enemy{
 	@Override
 	public void useAbility1() {
 		controller.addEntity(new Projectile_bossFire(getxGridNearest()+1,getyGridNearest()+3,game,this));
-		controller.addEntity(new Projectile_bossFire(getxGridNearest()+1,getyGridNearest()+3,game,this));
+		
 		
 	}
 

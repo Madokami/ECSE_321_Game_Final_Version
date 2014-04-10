@@ -182,6 +182,7 @@ public class PauseMenu implements GeneralMenu{
 				} else if (pauseState == SETTINGS){
 					pState = PauseState.SETTINGS;
 				} else if (pauseState == QUIT){
+					
 					Menu.backToMenu();
 				}
 				GameSystem.playConfirm();

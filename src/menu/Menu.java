@@ -359,8 +359,10 @@ public class Menu {
 	  */
 	public static void backToMenu() {
 		GameSystem.turnOffBgm();
-		System.gc();
 		GameSystem.LAN_TWO_PLAYER_MODE=false;
+		GameSystem.setDefaultKeyLayout();
+		GameSystem.TWO_PLAYER_MODE=false;
+		GameSystem.PLAYER_ONE_CHOSEN=false;
 		GameSystem.turnOnBgm("/sound/music/title.wav");
 		Menu.mState=MENUSTATE.MAIN;
 		GameSystem.state=GameSystem.STATE.MENU;

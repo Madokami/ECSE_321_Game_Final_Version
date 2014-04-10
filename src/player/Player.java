@@ -488,7 +488,7 @@ public abstract class Player extends MovableObject{
 			skill1Timer=0;
 		}
 		else{
-			GameSystem.playError();
+			//GameSystem.playError();
 			getpVoice().playCdSound();
 		}
 	}
@@ -505,7 +505,7 @@ public abstract class Player extends MovableObject{
 			skill2Timer=0;
 		}
 		else{
-			GameSystem.playError();
+			//GameSystem.playError();
 			getpVoice().playCdSound();
 		}
 	}
@@ -514,7 +514,7 @@ public abstract class Player extends MovableObject{
 	 */
 	public void useAbility3(){
 		if(skill3Timer<skill3Cd){
-			GameSystem.playError();
+			//GameSystem.playError();
 			getpVoice().playCdSound();
 			return;
 		}
@@ -523,6 +523,7 @@ public abstract class Player extends MovableObject{
 			mp=maxMp;
 			skill3Timer=0;
 			soulGemValueImage=IntToImage.toImageGriefSyndrome((int)soul);
+			GameSystem.playConfirm();
 		}
 		
 	}

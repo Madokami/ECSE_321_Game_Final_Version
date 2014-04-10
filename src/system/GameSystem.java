@@ -197,11 +197,12 @@ public class GameSystem extends Canvas implements Runnable {
 			lastTime = now;
 			if (delta > 1) {
 				tick();
+				render();
 				updates++;
 				delta--;
 			}
 
-			render();
+			//render();
 
 			frames++;
 			if (System.currentTimeMillis() - timer > 1000) {

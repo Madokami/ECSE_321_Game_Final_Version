@@ -83,7 +83,7 @@ public class Player_Homura extends Player{
 	*/
 	public void useUltimate(){
 		if(ultyTimer<ultyCd){
-			GameSystem.playError();
+			//GameSystem.playError();
 			this.getpVoice().playCdSound();
 			return;
 		}

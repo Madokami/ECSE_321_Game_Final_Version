@@ -74,8 +74,11 @@ public class Player_Sayaka extends Player{
 		playUltimateSound();
 		GameSystem.musicPlayer.playSwoosh();
 		*/
+		if(game.isTimeStop()){
+			return;
+		}
 		if(ultyTimer<ultyCd){
-			GameSystem.playError();
+			//GameSystem.playError();
 			this.getpVoice().playCdSound();
 			return;
 		}

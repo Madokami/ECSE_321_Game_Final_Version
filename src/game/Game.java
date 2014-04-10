@@ -163,7 +163,7 @@ public class Game {
 	 * Checks current conditions to determine changes in game system
 	 */
 	public void tick(){
-		
+		//curLevel=12;
 		if(isWaiting()){
 			if(GameSystem.LAN_TWO_PLAYER_MODE){
 				if(Game.cChosenP2==null){
@@ -592,6 +592,7 @@ public class Game {
 	public void keyPressed(int key) {
 		if(key==KeyEvent.VK_P){
 			GameSystem.state=STATE.PAUSE;
+			GameSystem.playConfirm();
 		}
 		if(gState==GameState.PLAY){
 			
