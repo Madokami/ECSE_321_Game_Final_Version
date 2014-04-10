@@ -133,16 +133,18 @@ public class Music{
 	 * @param url url of the sound source
 	 */
 	public void playSound(String url){
+		if(sound!=null) sound.stop();
 		sound=loader.newClip(url);
 		sound.start();
 	}
 	
 	public void playSoundLoop(String url){
+		if(sound!=null) sound.stop();
 		sound=loader.newClip(url);
 		sound.loop(sound.LOOP_CONTINUOUSLY);
 	}
 	public void stopSound(){
-		sound.stop();
+		if(sound!=null) sound.stop();
 	}
 	
 	/**

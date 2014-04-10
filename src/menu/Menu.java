@@ -33,7 +33,7 @@ public class Menu {
 	public MenuHighscore mHighscore;
 	
 	public static BufferedImage logo;
-	public BufferedImage startImage,startImageOn,quitImage,quitImageOn,networkImage,networkImageOn;
+	public BufferedImage startImage,startImageOn,quitImage,quitImageOn,highscoreImage,highscoreImageOn;
 	
 	
 	public static int X_START = 70;
@@ -108,8 +108,8 @@ public class Menu {
 		startImageOn=GameSystem.loader.loadImage("/image/menu/start.png");
 		quitImage=GameSystem.loader.loadImage("/image/menu/quit2.png");
 		quitImageOn=GameSystem.loader.loadImage("/image/menu/quit.png");
-		networkImage=GameSystem.loader.loadImage("/image/menu/network2.png");
-		networkImageOn=GameSystem.loader.loadImage("/image/menu/network.png");
+		highscoreImage=GameSystem.loader.loadImage("/image/menu/highscore2.png");
+		highscoreImageOn=GameSystem.loader.loadImage("/image/menu/highscore.png");
 		
 		POINTER_X_START=X_START-pointer.getWidth();
 		POINTER_Y_START=Y_START-pointer.getHeight();
@@ -151,7 +151,7 @@ public class Menu {
 			//g.drawString("Story", X_START-5, Y_START);
 			//g.drawString("Arcade", X_START-2+SPACING, Y_START);
 			g.drawImage(startImage,X_START, Y_START,null);
-			g.drawImage(networkImage,X_START+SPACING, Y_START,null);
+			g.drawImage(highscoreImage,X_START+SPACING, Y_START,null);
 			g.drawImage(quitImage,X_START+2*SPACING, Y_START,null);
 			//g.drawString("Quit", X_START-2+3*SPACING, Y_START);
 		}
@@ -173,7 +173,7 @@ public class Menu {
 			}
 			else if(selected==SELECTED.NETWORK){
 				//g.setColor(Color.LIGHT_GRAY);
-				g.drawImage(networkImageOn,X_START+SPACING, Y_START,null);
+				g.drawImage(highscoreImageOn,X_START+SPACING, Y_START,null);
 				//g.drawImage(pointer, POINTER_X_START+SPACING, POINTER_Y_START, null);
 			}
 			else if(selected==SELECTED.QUIT){

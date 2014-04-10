@@ -47,8 +47,6 @@ public class Game {
 	public static int TOTAL_SCORE;
 	public static int HIGH_SCORE;
 	
-	//test make change
-	//test change number 2
 	private static Player player,player2;
 	private BufferedImage background;
 	private boolean playing;
@@ -166,7 +164,6 @@ public class Game {
 	 */
 	public void tick(){
 		
-		
 		if(isWaiting()){
 			if(GameSystem.LAN_TWO_PLAYER_MODE){
 				if(Game.cChosenP2==null){
@@ -188,14 +185,17 @@ public class Game {
 				return;
 			}
 			if(victory){
+				calculateTotalScore();
 				curLevel++;
 				if(curLevel>lastStage){
 					curLevel=1;
 				}
 				GameSystem.setDefaultKeyLayout();
 				player.updatePlayerData();
+				if(GameSystem.TWO_PLAYER_MODE){
+					player2.updatePlayerData();
+				}
 				//gameData.updateGameData(this);
-				calculateTotalScore();
 				goToScore();
 				saveGame();
 				return;
@@ -230,9 +230,16 @@ public class Game {
 				return;
 			}
 			if(timeStop){
-				player.tick();
 				if(GameSystem.TWO_PLAYER_MODE){
-					player2.tick();
+					if(Game.cChosen==CHARACTER.HOMURA){
+						player.tick();
+					}
+					if(Game.cChosenP2==CHARACTER.HOMURA){
+						player2.tick();
+					}
+				}
+				else{
+					player.tick();
 				}
 				for(int i=0;i<this.bombList.size();i++){
 					bombList.get(i).tick();
@@ -903,10 +910,10 @@ public class Game {
 	public void calculateTotalScore(){
 		int timeSpent = GameTimer.mGameTime*60 + GameTimer.sGameTime;
 		TOTAL_SCORE = Player.SCORE*100/timeSpent;
-		if(GameSystem.GAME_DATA.HIGH_SCORE[curLevel-1]<TOTAL_SCORE){
-			GameSystem.GAME_DATA.HIGH_SCORE[curLevel-1]=TOTAL_SCORE;
+		if(GameSystem.GAME_DATA.HIGH_SCORE[curLevel]<TOTAL_SCORE){
+			GameSystem.GAME_DATA.HIGH_SCORE[curLevel]=TOTAL_SCORE;
 		}
-		HIGH_SCORE=GameSystem.GAME_DATA.HIGH_SCORE[curLevel-1];
+		HIGH_SCORE=GameSystem.GAME_DATA.HIGH_SCORE[curLevel];
 	}
 	//getters and setters
 

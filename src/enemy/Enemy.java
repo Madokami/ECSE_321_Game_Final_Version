@@ -337,7 +337,7 @@ public abstract class Enemy extends MovableObject{
 	 * @param value experience that this Enemy will provide when killed
 	 */
 	public void setExp(int value){
-		this.exp=value;
-		this.score=value;
+		this.exp=(int) (value*Game.DIFFICULTY);
+		this.score=(int) (value*Game.DIFFICULTY);
 	}
 }

@@ -78,8 +78,9 @@ public class Player_Madoka extends Player{
 		dead=new ImageSequence("/image/spriteSheet/actors/player/madoka/dead",11);
 		sequence.startSequence(stand);
 		
-		ultyCd = 30;
-		ultyTimer=30;
+		ultyCd = 20;
+		ultyTimer=ultyCd;
+		skillUltCost=30;
 		
 	}
 	/**

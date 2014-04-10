@@ -465,6 +465,7 @@ public class MenuChar implements GeneralMenu{
 								else if(cSelected == CHARACTER.KYOUKO){
 									Game.cChosen=Game.CHARACTER.KYOUKO;
 								}
+								handler.setNewValues();
 								GameSystem.playConfirm();
 								playSelectionSound();
 								Menu.toChooseChar();

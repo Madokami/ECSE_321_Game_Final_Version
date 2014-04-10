@@ -1,0 +1,10 @@
+AUDIO_BGM:/sound/music/bgm1.wav
+HOMURA:
+SP_R:/image/talk/ho_ms.png
+This level has the first boss.
+It can summon minions, throw scissors,
+and generate spikes randomly in the map.
+Be careful.
+
+
+END

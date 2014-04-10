@@ -1,0 +1,45 @@
+HOMURA:
+SP_R:/image/talk/ho_ms.png
+AUDIO_BGM:/sound/music/bgm1.wav
+
+Welcome to Magibomb.
+This was opposed to be a storyline.
+However, since group 6 is out of 
+time, this is now a tutorial....
+Regardless, the script handling
+system is built. One can control
+the background image, standing sprite
+and music directly in a .txt file.
+There just no time to add content...
+
+Back to the tutorial.
+There are 6 different stats to 
+each character. hp,mp,soul,speed,
+damage, and range. When hp reaches
+0 the it's game over, be careful.
+mp is used for all kinds of actions
+including placing bombs, kicking 
+bombs and activating special abilities.
+Soul is converted to hp periodically 
+when hp is not full. 30 soul currently
+heals 4.5% hp. Soul can also be used
+to instanly refill mp; the cost goes
+up depending on the max mp.Speed is 
+how fast the chacter can walk.
+Damage affects bomb damage as well
+as some abilities' damage. Range is
+how many grid the bomb's fire can 
+cover.
+When a character level up, you again
+points that can be used to upgrade
+the stats.
+The game will auto save every time
+a stage is beat.To wipe saves,delete
+the game.ser file under /system/save.
+
+Refer to the manual for what keys to
+press for what.
+
+Good luck.
+
+END
