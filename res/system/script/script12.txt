@@ -1,0 +1,8 @@
+HOMURA:
+SP_R:/image/talk/ho_ms.png
+AUDIO_BGM:/sound/music/bgm1.wav
+
+This is the last level.
+The final boss is strong.
+
+END
